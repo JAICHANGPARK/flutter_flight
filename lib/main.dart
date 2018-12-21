@@ -8,27 +8,40 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: appTheme,
+      home: HomeScreen(),
     );
   }
 }
+
+Color firstColor = Color(0xfff47d15);
+Color secondColor = Color(0xffef772c);
+
+ThemeData appTheme =
+    ThemeData(primaryColor: Color(0xfff3791a), fontFamily: 'Oxygen');
+
+List<String> locations = ['Boston (BOS)', 'New York City (JFK)'];
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(children: <Widget>[
-        HomeScreenTopPart(),
-      ],),
+      body: Column(
+        children: <Widget>[
+          HomeScreenTopPart(),
+        ],
+      ),
     );
   }
 }
 
+const TextStyle dropDownLabelStyle =
+    TextStyle(color: Colors.white, fontSize: 16.0);
+
+const TextStyle dropDownMenuItemsStyle =
+    TextStyle(color: Colors.black, fontSize: 16.0);
 
 class HomeScreenTopPart extends StatefulWidget {
   @override
@@ -40,33 +53,73 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
-
-           ClipPath(
-            clipper: CustomShapeClipper(),
-             child: Container(
-              height: 400.0,
-              color: Colors.orange,
+        ClipPath(
+          clipper: CustomShapeClipper(),
+          child: Container(
+            height: 400.0,
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [firstColor, secondColor])),
+            child: Column(
+              children: <Widget>[
+                SizedBox(
+                  height: 50.0,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Row(
+                    children: <Widget>[
+                      Icon(
+                        Icons.location_on,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 16.0,
+                      ),
+                      PopupMenuButton(
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              locations[0],
+                              style: dropDownLabelStyle,
+                            ),
+                            Icon(
+                              Icons.keyboard_arrow_down,
+                              color: Colors.white,
+                            )
+                          ],
+                        ),
+                        itemBuilder: (BuildContext context) =>
+                            <PopupMenuItem<int>>[
+                              PopupMenuItem(
+                                child: Text(
+                                  locations[0],
+                                  style: dropDownMenuItemsStyle,
+                                ),
+                                value: 0,
+                              ),
+                              PopupMenuItem(
+                                child: Text(
+                                  locations[1],
+                                  style: dropDownMenuItemsStyle,
+                                ),
+                                value: 1,
+                              )
+                            ],
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
-           ),
-
-
+        ),
       ],
     );
   }
 }
 
-
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -127,10 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .display1,
+              style: Theme.of(context).textTheme.display1,
             ),
           ],
         ),
