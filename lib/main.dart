@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_flight/CustomShapeClipper.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,23 +8,53 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: HomeScreen(),
     );
   }
 }
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(children: <Widget>[
+        HomeScreenTopPart(),
+      ],),
+    );
+  }
+}
+
+
+class HomeScreenTopPart extends StatefulWidget {
+  @override
+  _HomeScreenTopPartState createState() => _HomeScreenTopPartState();
+}
+
+class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+
+           ClipPath(
+            clipper: CustomShapeClipper(),
+             child: Container(
+              height: 400.0,
+              color: Colors.orange,
+          ),
+           ),
+
+
+      ],
+    );
+  }
+}
+
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -96,7 +127,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme
+                  .of(context)
+                  .textTheme
+                  .display1,
             ),
           ],
         ),
