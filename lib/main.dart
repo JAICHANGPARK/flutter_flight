@@ -59,7 +59,7 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
         ClipPath(
           clipper: CustomShapeClipper(),
           child: Container(
-            height: 420.0,
+            height: 450.0,
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [firstColor, secondColor])),
             child: Column(
