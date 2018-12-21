@@ -2,6 +2,30 @@
 
 A new Flutter application.
 
+# Part 1
+
+
+<div style="text-align: center">
+  <table>
+    <tr>
+      <td style="text-align: center">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-21-234237.png" width="200">
+      </td>
+      <td style="text-align: center">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-21-232633.png" width="200">
+      </td>
+      <td style="text-align: center">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-21-233307.png" width="200">
+      </td>
+      <td style="text-align: center">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-21-233457.png" width="200">
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
