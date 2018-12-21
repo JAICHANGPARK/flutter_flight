@@ -49,6 +49,9 @@ class HomeScreenTopPart extends StatefulWidget {
 }
 
 class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
+
+
+  var selectedLocationIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -76,10 +79,16 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                         width: 16.0,
                       ),
                       PopupMenuButton(
+                        onSelected: (index){
+                          setState(() {
+                            selectedLocationIndex = index;
+                          });
+
+                        },
                         child: Row(
                           children: <Widget>[
                             Text(
-                              locations[0],
+                              locations[selectedLocationIndex],
                               style: dropDownLabelStyle,
                             ),
                             Icon(
@@ -106,6 +115,10 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                               )
                             ],
                       ),
+
+                      Spacer(),
+                      Icon(Icons.settings,color: Colors.white,)
+
                     ],
                   ),
                 )
