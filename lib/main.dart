@@ -244,9 +244,7 @@ class _ChoiceChipState extends State<ChoiceChip> {
   }
 }
 
-var HomeScreenBottomPart =
-Container(
-
+var HomeScreenBottomPart = Container(
   child: Column(
     children: <Widget>[
       Padding(
@@ -266,10 +264,96 @@ Container(
             ),
           ],
         ),
-      )
+      ),
+      Container(
+        height: 210.0,
+        child: ListView(scrollDirection: Axis.horizontal, children: cityCards),
+      ),
     ],
   ),
 );
+
+List<CityCard> cityCards = [
+  CityCard("assets/images/lasvegas.jpg", "Las Vegas", "Feb 2019", "45", "4299",
+      "2250"),
+  CityCard(
+      "assets/images/athens.jpg", "Athens", "Apr 2019", "50", "9999", "4159"),
+  CityCard(
+      "assets/images/sydney.jpeg", "Sydney", "May 2019", "40", "5999", "2399"),
+];
+
+class CityCard extends StatelessWidget {
+  final String imagePath, cityName, monthYear, discount, oldPrice, newPrice;
+
+  CityCard(this.imagePath, this.cityName, this.monthYear, this.discount,
+      this.oldPrice, this.newPrice);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        child: Stack(
+          children: <Widget>[
+            Container(
+              height: 210.0,
+              width: 160.0,
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Positioned(
+              left: 10.0,
+              bottom: 10.0,
+              right: 10.0,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        cityName,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            fontSize: 18.0),
+                      ),
+                      Text(
+                        monthYear,
+                        style: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            color: Colors.white,
+                            fontSize: 14.0),
+                      )
+                    ],
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.rectangle,
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+
+                    ),
+                    child: Text("$discount%", style: TextStyle(
+                      fontSize: 14.0,
+                      color: Colors.black,
+                    ),),
+                  )
+
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
