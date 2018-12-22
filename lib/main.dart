@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_flight/CustomAppBar.dart';
 import 'package:flutter_flight/CustomShapeClipper.dart';
+import 'package:flutter_flight/flight_list.dart';
 import 'package:intl/intl.dart';
 
 void main() => runApp(MyApp());
@@ -160,8 +161,13 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                         suffixIcon: Material(
                           elevation: 2.0,
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                          child: Icon(
-                            Icons.search,
+                          child: InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => FlightListing()));
+                            },
+                            child: Icon(
+                              Icons.search,
+                            ),
                           ),
                         ),
                         border: InputBorder.none,
