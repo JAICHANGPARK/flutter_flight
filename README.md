@@ -31,6 +31,27 @@ https://dribbble.com/shots/5662956-Flight-Tickets-Deal-Tracker-App-Day-340-365-P
 </div>
 
 
+# Part 2
+
+<div style="text-align: center">
+  <table>
+    <tr>
+      <td style="text-align: center">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-22-212253.png" width="200">
+      </td>
+      <td style="text-align: center">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-22-213412.png" width="200">
+      </td>
+      <td style="text-align: center">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-22-215217.png" width="200">
+      </td>
+      <td style="text-align: center">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-22-215947.png" width="200">
+      </td>
+    </tr>
+  </table>
+</div>
+
 
 ## Getting Started
 
