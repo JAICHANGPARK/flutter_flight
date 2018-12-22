@@ -31,6 +31,7 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: <Widget>[
           HomeScreenTopPart(),
+          HomeScreenBottomPart,
         ],
       ),
     );
@@ -42,6 +43,8 @@ const TextStyle dropDownLabelStyle =
 
 const TextStyle dropDownMenuItemsStyle =
     TextStyle(color: Colors.black, fontSize: 16.0);
+
+var viewAllStyle = TextStyle(color: appTheme.primaryColor, fontSize: 14.0);
 
 class HomeScreenTopPart extends StatefulWidget {
   @override
@@ -240,6 +243,33 @@ class _ChoiceChipState extends State<ChoiceChip> {
     );
   }
 }
+
+var HomeScreenBottomPart =
+Container(
+
+  child: Column(
+    children: <Widget>[
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            Text(
+              "Currently Watched Items",
+              style: dropDownMenuItemsStyle,
+            ),
+            Spacer(),
+            Text(
+              "VIEW ALL(12)",
+              style: viewAllStyle,
+            ),
+          ],
+        ),
+      )
+    ],
+  ),
+);
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
