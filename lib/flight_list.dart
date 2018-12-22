@@ -142,12 +142,13 @@ class FlightCard extends StatelessWidget {
     return Stack(
       children: <Widget>[
         Container(
+          margin: EdgeInsets.only(right: 16.0),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10.0)),
             border: Border.all(color: flightBorderColor),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(right: 16.0),
+            padding: const EdgeInsets.all(16.0),
             child: Column(
               children: <Widget>[
                 Row(
@@ -169,7 +170,14 @@ class FlightCard extends StatelessWidget {
                     )
                   ],
                 ),
+
+                Row(
+                  children: <Widget>[
+
+                  ],
+                )
               ],
+
             ),
           ),
           height: 100.0,
@@ -178,3 +186,11 @@ class FlightCard extends StatelessWidget {
     );
   }
 }
+
+class FlightDetailChip extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
