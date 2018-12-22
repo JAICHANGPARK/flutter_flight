@@ -15,16 +15,16 @@ https://dribbble.com/shots/5662956-Flight-Tickets-Deal-Tracker-App-Day-340-365-P
   <table>
     <tr>
       <td style="text-align: center">
-        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-21-234237.png" width="200">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/part1/device-2018-12-21-234237.png" width="200">
       </td>
       <td style="text-align: center">
-        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-21-232633.png" width="200">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/part1/device-2018-12-21-232633.png" width="200">
       </td>
       <td style="text-align: center">
-        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-21-233307.png" width="200">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/part1/device-2018-12-21-233307.png" width="200">
       </td>
       <td style="text-align: center">
-        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-21-233457.png" width="200">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/part1/device-2018-12-21-233457.png" width="200">
       </td>
     </tr>
   </table>
@@ -37,16 +37,16 @@ https://dribbble.com/shots/5662956-Flight-Tickets-Deal-Tracker-App-Day-340-365-P
   <table>
     <tr>
       <td style="text-align: center">
-        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-22-212253.png" width="200">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/part2/device-2018-12-22-212253.png" width="200">
       </td>
       <td style="text-align: center">
-        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-22-213412.png" width="200">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/part2/device-2018-12-22-213412.png" width="200">
       </td>
       <td style="text-align: center">
-        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-22-215217.png" width="200">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/part2/device-2018-12-22-215217.png" width="200">
       </td>
       <td style="text-align: center">
-        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/device-2018-12-22-215947.png" width="200">
+        <img src="https://github.com/JAICHANGPARK/flutter_flight/blob/master/screen_shot/part2/device-2018-12-22-215947.png" width="200">
       </td>
     </tr>
   </table>
