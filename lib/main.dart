@@ -166,9 +166,10 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => FlightListing(
+                                      builder: (context) => InheritedFlightListing(
                                           fromLocation: locations[selectedLocationIndex],
-                                          toLocation: _searchFieldController.text)));
+                                          toLocation: _searchFieldController.text,
+                                      child: FlightListing(),)));
                             },
                             child: Icon(
                               Icons.search,

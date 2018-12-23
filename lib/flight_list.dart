@@ -39,10 +39,6 @@ class InheritedFlightListing extends InheritedWidget {
 }
 
 class FlightListing extends StatelessWidget {
-  String toLocation, fromLocation;
-
-  FlightListing({this.fromLocation, this.toLocation});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,8 +57,7 @@ class FlightListing extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: <Widget>[
-            FlightListTopPart(
-                fromLocation: fromLocation, toLocation: toLocation),
+            FlightListTopPart(),
             SizedBox(
               height: 20.0,
             ),
@@ -75,10 +70,6 @@ class FlightListing extends StatelessWidget {
 }
 
 class FlightListTopPart extends StatelessWidget {
-  String toLocation, fromLocation;
-
-  FlightListTopPart({this.fromLocation, this.toLocation});
-
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -116,7 +107,7 @@ class FlightListTopPart extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            "$fromLocation",
+                            '${InheritedFlightListing.of(context).fromLocation}',
                             style: TextStyle(fontSize: 16.0),
                           ),
                           Divider(
@@ -124,7 +115,7 @@ class FlightListTopPart extends StatelessWidget {
                             height: 20.0,
                           ),
                           Text(
-                            "$toLocation",
+                            '${InheritedFlightListing.of(context).toLocation}',
                             style: TextStyle(fontSize: 16.0),
                           ),
                         ],
