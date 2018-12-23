@@ -18,8 +18,27 @@ const TextStyle dropDownMenuItemsStyle =
 
 final formatCurrency = new NumberFormat.simpleCurrency();
 
-class FlightListing extends StatelessWidget {
+class InheritedFlightListing extends InheritedWidget {
+  final String toLocation, fromLocation;
 
+  const InheritedFlightListing({
+    this.toLocation,
+    this.fromLocation,
+    @required Widget child,
+  }) : super(child: child);
+
+  static InheritedFlightListing of(BuildContext context) {
+    return context.inheritFromWidgetOfExactType(InheritedFlightListing)
+        as InheritedFlightListing;
+  }
+
+  @override
+  bool updateShouldNotify(InheritedFlightListing old) {
+    return true;
+  }
+}
+
+class FlightListing extends StatelessWidget {
   String toLocation, fromLocation;
 
   FlightListing({this.fromLocation, this.toLocation});
@@ -42,21 +61,22 @@ class FlightListing extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: <Widget>[
-            FlightListTopPart(fromLocation : fromLocation, toLocation: toLocation),
-            SizedBox(height: 20.0,),
+            FlightListTopPart(
+                fromLocation: fromLocation, toLocation: toLocation),
+            SizedBox(
+              height: 20.0,
+            ),
             FlightListBottomPart(),
           ],
         ),
       ),
     );
   }
-
-
 }
 
 class FlightListTopPart extends StatelessWidget {
-
   String toLocation, fromLocation;
+
   FlightListTopPart({this.fromLocation, this.toLocation});
 
   @override
@@ -148,7 +168,6 @@ class FlightListBottomPart extends StatelessWidget {
           SizedBox(
             height: 10.0,
           ),
-
           ListView(
             shrinkWrap: true,
             physics: BouncingScrollPhysics(),
@@ -164,7 +183,6 @@ class FlightListBottomPart extends StatelessWidget {
               FlightCard(),
             ],
           ),
-
         ],
       ),
     );
@@ -231,11 +249,17 @@ class FlightCard extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
               child: Text(
                 "55%",
-                style: TextStyle(color: appTheme.primaryColor, fontSize: 14.0, fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: appTheme.primaryColor,
+                    fontSize: 14.0,
+                    fontWeight: FontWeight.bold),
               ),
               decoration: BoxDecoration(
-                  color: discountBackgroundColor,
-                  borderRadius: BorderRadius.all(Radius.circular(10.0),),),
+                color: discountBackgroundColor,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10.0),
+                ),
+              ),
             ),
           )
         ],
