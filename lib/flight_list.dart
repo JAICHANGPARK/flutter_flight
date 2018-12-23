@@ -19,6 +19,11 @@ const TextStyle dropDownMenuItemsStyle =
 final formatCurrency = new NumberFormat.simpleCurrency();
 
 class FlightListing extends StatelessWidget {
+
+  String toLocation, fromLocation;
+
+  FlightListing({this.fromLocation, this.toLocation});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +42,7 @@ class FlightListing extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: <Widget>[
-            FlightListTopPart(),
+            FlightListTopPart(fromLocation : fromLocation, toLocation: toLocation),
             SizedBox(height: 20.0,),
             FlightListBottomPart(),
           ],
@@ -45,9 +50,15 @@ class FlightListing extends StatelessWidget {
       ),
     );
   }
+
+
 }
 
 class FlightListTopPart extends StatelessWidget {
+
+  String toLocation, fromLocation;
+  FlightListTopPart({this.fromLocation, this.toLocation});
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -85,7 +96,7 @@ class FlightListTopPart extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(
-                            "Boston (BOS)",
+                            "$fromLocation",
                             style: TextStyle(fontSize: 16.0),
                           ),
                           Divider(
@@ -93,7 +104,7 @@ class FlightListTopPart extends StatelessWidget {
                             height: 20.0,
                           ),
                           Text(
-                            "New York City (JFK)",
+                            "$toLocation",
                             style: TextStyle(fontSize: 16.0),
                           ),
                         ],

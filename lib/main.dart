@@ -54,6 +54,8 @@ const TextStyle dropDownMenuItemsStyle =
 
 var viewAllStyle = TextStyle(color: appTheme.primaryColor, fontSize: 14.0);
 
+final _searchFieldController = TextEditingController(text: locations[1]);
+
 class HomeScreenTopPart extends StatefulWidget {
   @override
   _HomeScreenTopPartState createState() => _HomeScreenTopPartState();
@@ -150,9 +152,7 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                     elevation: 5.0,
                     borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     child: TextField(
-                      controller: TextEditingController(
-                        text: locations[0],
-                      ),
+                      controller: _searchFieldController,
                       style: dropDownMenuItemsStyle,
                       cursorColor: appTheme.primaryColor,
                       decoration: InputDecoration(
@@ -162,8 +162,13 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                           elevation: 2.0,
                           borderRadius: BorderRadius.all(Radius.circular(30.0)),
                           child: InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => FlightListing()));
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => FlightListing(
+                                          fromLocation: locations[selectedLocationIndex],
+                                          toLocation: _searchFieldController.text)));
                             },
                             child: Icon(
                               Icons.search,
@@ -287,16 +292,13 @@ var HomeScreenBottomPart = Container(
 );
 
 List<CityCard> cityCards = [
-  CityCard("assets/images/lasvegas.jpg", "Las Vegas", "Feb 2019", "45", 4299,
-      2250),
   CityCard(
-      "assets/images/athens.jpg", "Athens", "Apr 2019", "50", 9999, 4159),
-  CityCard(
-      "assets/images/sydney.jpeg", "Sydney", "May 2019", "40", 5999, 2399),
+      "assets/images/lasvegas.jpg", "Las Vegas", "Feb 2019", "45", 4299, 2250),
+  CityCard("assets/images/athens.jpg", "Athens", "Apr 2019", "50", 9999, 4159),
+  CityCard("assets/images/sydney.jpeg", "Sydney", "May 2019", "40", 5999, 2399),
 ];
 
 final formatCurrency = new NumberFormat.simpleCurrency();
-
 
 class CityCard extends StatelessWidget {
   final String imagePath, cityName, monthYear, discount;
